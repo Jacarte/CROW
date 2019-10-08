@@ -13,16 +13,15 @@ if [ "${ext}" == "wast" ]; then
 fi
 
 if [ "${ext}" == "wasm" ]; then
-  echo "### step2 wasm2opt \c"
-  ../../binaryen/bin/wasm-opt ${name}.wasm --flatten --souperify-single-use > ${name}.opt
-  ext='opt'
+  echo "### step2 wasm2c \c"
+  ../../wabt/bin/wasm2c ${name}.wasm -o ${name}.c
+  ext='c'
   echo "okay"
 fi
 
-if [ "${ext}" == "opt" ]; then
-  echo "### step3 opt2ll \c"
-  python souper2llvm.py ${name}.opt > ${name}.ll
-  # ../../souper/build/souper2llvm ${name}.opt > ${name}.ll
+if [ "${ext}" == "c" ]; then
+  echo "### step3 c2ll \c"
+  clang --target=wasm32 -nostdlib -emit-llvm -S ${name}.c
   ext='ll'
   echo "okay"
 fi
