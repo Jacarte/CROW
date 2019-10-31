@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{KG1J:function(e,n,a){"use strict";a.r(n);var t=a("q1tI"),r=a.n(t),o=a("bx4M"),u=a("Ol7k"),c=a("PArb");a("Wbzz"),o.a.Meta,u.a.Header,u.a.Content,u.a.Footer;n.default=function(){return r.a.createElement(c.a,null,"Our Benchmarks")}}}]);
+//# sourceMappingURL=component---src-pages-sections-benchmarks-js-56fb96032754254db339.js.map
